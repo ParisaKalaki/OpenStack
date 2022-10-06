@@ -11,13 +11,13 @@ To be able to analyze raw OpenStack logs, we need to parse and structure them fi
  <p align="center"><img src="docs/img/workflow.PNG" width="250"><br>Workflow of the proposed model</p>
 
 
-# Dataset
+** Dataset **
 
 A dataset of OpenStack logs was required to conduct this study. There is only one open-source dataset of OpenStack, which is not useful and reliable due to several issues in logs
  containing anomalies. Therefore, about 25,000 OpenStack logs are generated along with the fault injection. Each log has an Instance-Id, which shows the VM ID. This ID is unique,
  the total number of unique IDs for VMs are separately presented according to being normal, containing anomalies, and also the time required for generating these logs.
 
-the openstack log dataset is presented [here](https://github.com/ParisaKalaki/openstack-logs).
+The openstack log dataset is presented [here](https://github.com/ParisaKalaki/openstack-logs).
 
 
 1. **Log parsing:**
@@ -45,3 +45,7 @@ In this step, we discussed how to use PCA, RPCA, ALM, and the data projection on
 4. **Anomaly Detection:**
 
 We train the model and a threshold was determined to detect anomaly.
+
+** how to use? **
+If you have a raw log, first use log parser to make structured data. Run IPLOM_demo_openstack on your data set.
+After this step, Run RPCA-demo on your example.log_structured.csv which obtained from logparser.
