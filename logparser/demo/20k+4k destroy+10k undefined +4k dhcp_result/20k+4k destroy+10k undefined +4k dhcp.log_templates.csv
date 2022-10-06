@@ -1,0 +1,113 @@
+EventId,EventTemplate,Occurrences
+cf6dd751,Error updating resources for node parisaserver. libvirt.libvirtError Node device not found no node device with matching name 'net_tap345a268b_34_fe_16_3e_68_be_89',1
+a241ab99,error during stop() in sync_power_state. nova.exception.InstanceInvalidState Instance c3c09e41-7d3b-4d1b-9594-28ca5565241c in task_state powering-off. Cannot stop while the instance is in this state.,1
+8dab54d9,Timed out waiting for nova-conductor. Is it running? Or did this service start before nova-conductor? Reattempting establishment of nova-conductor connection... oslo_messaging.exceptions.MessagingTimeout Timed out waiting for a reply to message ID <*>,2
+06b1031e,Instance <*> is not being actively managed by this compute host but has allocations referencing this compute host {'resources' {'DISK_GB' <*> 'MEMORY_MB' <*> 'VCPU' 1}}. Skipping heal of allocation because we do not know what to do.,9
+185af07c,Periodic task is updating the host stats it is trying to get disk info for <*> but the backing disk storage was removed by a concurrent operation such as resize. Error No disk at nova.exception.DiskNotFound No disk at <*>,25
+61733bdc,Build of instance afcf8235-2a42-4a95-8f6c-ee9c70d41f09 aborted Flavor's disk is too small for requested image. Flavor disk is 1073741824 bytes image is 2147483648 bytes. nova.exception.BuildAbortException Build of instance afcf8235-2a42-4a95-8f6c-ee9c70d41f09 aborted Flavor's disk is too small for requested image. Flavor disk is 1073741824 bytes image is 2147483648 bytes.,1
+72490f43,Build of instance <*> aborted Volume <*> did not finish being created even after we waited 0 seconds or 1 attempts. And its status is error. nova.exception.BuildAbortException Build of instance <*> aborted Volume <*> did not finish being created even after we waited 0 seconds or 1 attempts. And its status is error.,2
+51250071,"<name>instance-00001627< <uuid>c88346c2-5bd0-492a-b2c2-9ed53c44755d< <metadata>\n <nova instance xmlns nova ""http <nova package version ""22.1.0"" <nova name>fault-testing-vm-10< <nova creationTime>2021-04-17 12 10 28< <nova flavor name ""m1.small"">\n <nova memory>2048< <nova disk>20< <nova swap>0< <nova ephemeral>0< <nova vcpus>1< < <nova owner>\n <nova user uuid ""e5901b44354147719ca8510b694f539a"">admin< <nova project uuid ""81338640a71b4764b2f51b790638b2fd"">admin< < <nova root type ""image"" uuid ""cee39fc1-8dd2-4443-bb51-1f41ea2a2e7a"" <nova ports>\n <nova port uuid ""a49fa25d-b62e-43de-9584-8a6ac5344f44"">\n <nova ip type ""fixed"" address ""2001 db8 23d"" ipVersion ""6"" <nova ip type ""fixed"" address """" ipVersion ""4"" < < < < <memory unit \'KiB\'>2097152< <currentMemory unit \'KiB\'>2097152< <vcpu placement \'static\'>1< <cputune>\n <shares>1024< < <sysinfo type \'smbios\'>\n <system>\n <entry name \'manufacturer\'>OpenStack Foundation< <entry name \'product\'>OpenStack Nova< <entry name \'version\'>22.1.0< <entry name \'serial\'>c88346c2-5bd0-492a-b2c2-9ed53c44755d< <entry name \'uuid\'>c88346c2-5bd0-492a-b2c2-9ed53c44755d< <entry name \'family\'>Virtual Machine< < < <os>\n <type arch \'x86_64\' machine \'pc-i440fx-4.2\'>hvm< <boot dev \'hd\' <smbios mode \'sysinfo\' < <features>\n <acpi <apic < <cpu mode \'custom\' match \'exact\' check \'none\'>\n <model fallback \'forbid\'>qemu64< <topology sockets \'1\' cores \'1\' threads \'1\' < <clock offset \'utc\' <on_poweroff>destroy< <on_reboot>restart< <on_crash>destroy< <devices>\n <emulator> <disk type \'file\' device \'disk\'>\n <driver name \'qemu\' type \'qcow2\' cache \'none\' <source file \' <target dev \'vda\' bus \'virtio\' <address type \'pci\' domain \'0x0000\' bus \'0x00\' slot \'0x04\' function \'0x0\' < <controller type \'usb\' index \'0\' model \'none\' <controller type \'pci\' index \'0\' model \'pci-root\' <interface type \'bridge\'>\n <mac address \'fa 16 3e 7f 87 e6\' <source bridge \'br-int\' <virtualport type \'openvswitch\'>\n <parameters interfaceid \'a49fa25d-b62e-43de-9584-8a6ac5344f44\' < <target dev \'tapa49fa25d-b6\' <model type \'virtio\' <driver name \'qemu\' <mtu size \'1500\' <address type \'pci\' domain \'0x0000\' bus \'0x00\' slot \'0x03\' function \'0x0\' < <serial type \'pty\'>\n <log file \'append \'off\' <target type \'isa-serial\' port \'0\'>\n <model name \'isa-serial\' < < <console type \'pty\'>\n <log file \'append \'off\' <target type \'serial\' port \'0\' < <input type \'mouse\' bus \'ps2\' <input type \'keyboard\' bus \'ps2\' <graphics type \'vnc\' port \'-1\' autoport \'yes\' listen \'\'>\n <listen type \'address\' address \'\' < <video>\n <model type \'cirrus\' vram \'16384\' heads \'1\' primary \'yes\' <address type \'pci\' domain \'0x0000\' bus \'0x00\' slot \'0x02\' function \'0x0\' < <memballoon model \'virtio\'>\n <stats period \'10\' <address type \'pci\' domain \'0x0000\' bus \'0x00\' slot \'0x05\' function \'0x0\' < <rng model \'virtio\'>\n <backend model \'random\'> <address type \'pci\' domain \'0x0000\' bus \'0x00\' slot \'0x06\' function \'0x0\' < </devices>\n</domain>\n' )",1
+4ffa2c6e,self.driver.get_available_resource(nodename),2
+433fe951,self._get_pci_passthrough_devices(),2
+e1c629f8,self._domain.createWithFlags(flags),1
+2063c160,value,1
+52409b88,Instance <*> successfully.,2214
+4e0f7ce8,Deletion of complete,1340
+18303e79,Get console output,1
+365b0598,privsep daemon starting,7
+24c8b7a4,execute(f *args **kwargs),2
+48d3b7ef,Successfully <*> vif VIFOpenVSwitch,1956
+d3972da2,VM <*> (Lifecycle Event),5056
+a79db41b,<*> <*> files <*>,1169
+dbeb168e,image <*> at (checking,19
+770b9da7,(most recent call last),3
+b0bd433b,"""line <*> in <*>",6
+58b23605,Unknown base file <*>,8
+dba0a2c9,nova-conductor connection established successfully,1
+084e947d,Loading compute driver 'libvirt.LibvirtDriver',1
+4e7907a9,[-] privsep daemon starting,2
+b972aba0,proxy_call(self._autowrap f *args **kwargs),2
+8d02d411,Claim successful on node parisaserver,1160
+597630e5,Deleted allocation for instance <*>,1146
+09ce316d,[-] Successfully <*> vif VIFOpenVSwitch,311
+1e665991,Starting compute node (version 22.1.0),1
+c3b5de44,Connection event '1' reason 'None',1
+8aea803e,kernel doesn't support AMD SEV,1
+f2ff5972,privsep process running with uid0/0,7
+689601d5,"devices.items() if ""pci"" in dev.listCaps()]",2
+7824976e,Took <*> seconds to build instance.,996
+8b73806a,Booting with volume-backed-image <*> at /dev/vda,2
+d89160e1,Loaded VIF plugins linux_bridge noop ovs,1
+93302cb2,Spawned new privsep daemon via rootwrap,9
+284a2f1f,live migration scheme and target URI ``live_migration_scheme``,1
+82bfecf9,may be silently ignored in the future.,1
+36893f37,Took <*> seconds to deallocate network for instance.,1200
+89cc3d5a,unable to read No such file or directory,1
+377477a2,Function 'nova.virt.libvirt.driver.LibvirtDriver.spawn.<locals>._wait_for_boot' run outlasted interval by <*> sec,5
+8cffe0e3,"[dev for dev in devices.values() if ""net"" in dev.listCaps()]",2
+e260a9cd,for removal in favor of two other options that,1
+158153e3,During sync_power_state the instance has a pending task <*> Skip.,2220
+41a2da91,Took <*> seconds to <*> the instance on the hypervisor.,2192
+d5a9bb43,virtual size 2147483648 larger than flavor root disk size 1073741824,1
+242b58be,Ignoring supplied device name Libvirt can't honour user-supplied dev names,2
+0f210cb1,Base swap or ephemeral file too young to remove <*>,6
+86e90d1b,Error launching a defined domain with XML <domain type 'qemu'>,22
+9a1e1996,Node device not found no node device with matching name 'net_tap345a268b_34_fe_16_3e_68_be_89',1
+7b9ae61a,Volume id <*> finished being created but its status is error.,2
+4c850ae9,"Deprecated Option ""live_migration_uri"" from group ""libvirt"" is deprecated for removal (",1
+99f72770,Automatically selected compute RPC version 5.13 from minimum service version 55,3
+7fa2fa52,Instance is already powered off in the hypervisor when stop is called.,22
+f77614dc,Looking for unclaimed instances stuck in BUILDING status for nodes managed by this host,1
+bdb2aae9,Instance failed to spawn libvirt.libvirtError Requested operation is not valid domain is not running,2
+aaae1035,Failed to start libvirt guest libvirt.libvirtError internal error process exited while connecting to monitor,2
+90d0dddd,No provider configs found in If files are present ensure the Nova process has access.,1
+84e6e5c4,Error updating resources for node parisaserver. libvirt.libvirtError unable to read No such file or directory,1
+209b77e8,Failed to build and run instance libvirt.libvirtError internal error process exited while connecting to monitor,1
+0db44a59,Timeout waiting for [('network-vif-plugged' <*> for instance with vm_state building and task_state spawning. eventlet.timeout.Timeout 300 seconds,57
+5f03f1a6,Failed to build and run instance libvirt.libvirtError Requested operation is not valid domain is not running,2
+093774cf,qemu unexpectedly closed the monitor 2021-04-17T12 09 42.281369Z qemu-system-x86_64 terminating on signal 15 from pid 1259 (/usr/sbin/libvirtd),1
+44bb0614,During _sync_instance_power_state the DB power_state (1) does not match the vm_power_state from the hypervisor (4). Updating power_state in the DB to match the hypervisor.,42
+5d38d5ed,Build of instance <*> aborted Failed to allocate the network(s) not rescheduling. nova.exception.BuildAbortException Build of instance <*> aborted Failed to allocate the network(s) not rescheduling.,69
+bb1a070b,Instance failed block device setup nova.exception.VolumeNotCreated Volume <*> did not finish being created even after we waited 0 seconds or 1 attempts. And its status is error.,2
+60851697,Failed to build and run instance libvirt.libvirtError internal error process exited while connecting to monitor 2021-04-17T12 <*> <*> qemu-system-x86_64 terminating on signal 15 from pid 1259 (/usr/sbin/libvirtd),2
+c693eaa4,<*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> to <*>,2
+28f25744,<*> service nova] Neutron deleted interface <*> detaching it from the instance and deleting it from the info cache,652
+bfe5aa42,internal error qemu unexpectedly closed the monitor <*> <*> <*> qemu-system-x86_64 terminating on signal 15 from pid <*> (/usr/sbin/libvirtd),3
+8f02c8ec,Instance failed to spawn nova.exception.FlavorDiskSmallerThanImage Flavor's disk is too small for requested image. Flavor disk is 1073741824 bytes image is 2147483648 bytes.,1
+d10ad2a9,Instance shutdown by itself. Calling the stop API. Current vm_state active current task_state None original DB power_state <*> current VM power_state 4,43
+2210d1ed,Instance shutdown by itself. Calling the stop API. Current vm_state active current task_state powering-off original DB power_state 1 current VM power_state 4,1
+2c621366,Failed to <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> <*> monitor <*> <*> <*> qemu-system-x86_64 terminating on signal 15 from pid <*> (/usr/sbin/libvirtd),26
+0e525b33,Successfully plugged vif VIFOpenVSwitch(active False address fa 16 3e <*> <*> <*> bridge_name 'br-int' has_traffic_filtering True id <*> network <*> plugin 'ovs' port_profile VIFPortProfileOpenVSwitch preserve_on_delete False vif_name <*>,102
+93af6abe,Successfully unplugged vif VIFOpenVSwitch(active False address fa 16 3e <*> <*> <*> bridge_name 'br-int' has_traffic_filtering True id <*> network <*> plugin 'ovs' port_profile VIFPortProfileOpenVSwitch preserve_on_delete False vif_name <*>,276
+53c7b896,Error from libvirt while getting description of <*> [Error Code 42] Domain not found no domain with matching uuid <*> <*> libvirt.libvirtError Domain not found no domain with matching uuid <*> <*>,83
+2368ba13,Creating image,1159
+ce0cacf4,Terminating instance,1196
+a8aa69bb,startup startup),2
+b08be380,<*> failed'),2
+a638b27e,meth(*args **kwargs),2
+16f606dc,e tb),1
+04d3f634,tcp 6640 send error Broken pipe,1
+b613a656,tcp 6640 connection dropped (Broken pipe),1
+b72f57b7,privsep process running with capabilities <*>,7
+62c77ac0,privsep daemon running as pid <*>,7
+6fe26443,[-] privsep process running with uid0/0,2
+d87f5f7e,[-] [-] Successfully <*> vif VIFOpenVSwitch,4
+0c0dde5a,[-] privsep process running with capabilities <*>,2
+dc45600b,[-] privsep daemon running as pid <*>,2
+b048663e,Instance failed to spawn nova.exception.VirtualInterfaceCreateException Virtual Interface creation failed,69
+54a4aae1,Failed to allocate network(s) nova.exception.VirtualInterfaceCreateException Virtual Interface creation failed,69
+2119e4bd,Running privsep helper ['sudo' 'nova-rootwrap' ''privsep-helper' '--config-file' ''--privsep_context' 'nova.privsep.sys_admin_pctxt' '--privsep_sock_path' '/tmp/tmpzig2myee/privsep.sock'],1
+9acc6fa6,Running privsep helper ['sudo' 'nova-rootwrap' ''privsep-helper' '--config-file' ''--privsep_context' 'vif_plug_ovs.privsep.vif_plug' '--privsep_sock_path' '/tmp/tmp7h8w6_6v/privsep.sock'],1
+43a43c9c,Received unexpected event <*> for instance with vm_state building and task_state spawning.,126
+a13b51ab,Received unexpected event <*> for instance with vm_state active and task_state None.,14
+d4a152da,Instance <*> has allocations against this compute host but is not found in the database.,11
+95efa68f,Instance failed to spawn libvirt.libvirtError Domain not found no domain with matching uuid <*> <*>,36
+e3f78b65,error during stop() in sync_power_state. nova.exception_Remote.UnexpectedTaskStateError_Remote Conflict updating instance <*> Expected {'task_state' [None]}. Actual {'task_state' 'powering-off'},21
+0d9e688f,Neutron deleted interface <*> detaching it from the instance and deleting it from the info cache,35
+191f4d3c,While synchronizing instance power states found <*> instances in the database and <*> instances on the hypervisor.,40
+2a55e9ce,While synchronizing instance power states found 2 instances in the database and 1 instances on the hypervisor.,1
+0cf2cc18,While synchronizing instance power states found 4 instances in the database and 3 instances on the hypervisor.,4
+8e664a45,Instance failed to spawn libvirt.libvirtError internal error qemu unexpectedly closed the monitor 2021-04-12T17 06 49.552745Z qemu-system-x86_64 terminating on signal 15 from pid 1304 (/usr/sbin/libvirtd),1
+3a2a1e9e,Instance failed to spawn libvirt.libvirtError internal error qemu unexpectedly closed the monitor 2021-04-17T12 <*> <*> qemu-system-x86_64 terminating on signal 15 from pid 1259 (/usr/sbin/libvirtd),18
+7f9614ff,Failed to start libvirt guest libvirt.libvirtError internal error qemu unexpectedly closed the monitor <*> <*> <*> qemu-system-x86_64 terminating on signal 15 from pid <*> (/usr/sbin/libvirtd),29
+a1cfd5a0,Instance failed to spawn libvirt.libvirtError internal error process exited while connecting to monitor 2021-04-17T12 <*> <*> qemu-system-x86_64 terminating on signal 15 from pid 1259 (/usr/sbin/libvirtd),3
