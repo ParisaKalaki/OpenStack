@@ -2,7 +2,7 @@
 
 # OpenStack Loglizer
 
-** OpenStack Loglizer is a machine learning-based log analysis toolkit for automated anomaly detection in OpenStack logs.**
+**OpenStack Loglizer is a machine learning-based log analysis toolkit for automated anomaly detection in OpenStack logs.**
 
 To be able to analyze raw OpenStack logs, we need to parse and structure them first. Identifying anomalous patterns in logs requires an ability to separate the normal space from
  the space in which the anomaly occurs. The proposed model includes four main steps that start from raw
