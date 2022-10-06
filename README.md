@@ -8,7 +8,7 @@ To be able to analyze raw OpenStack logs, we need to parse and structure them fi
  the space in which the anomaly occurs. The proposed model includes four main steps that start from raw
  log parsing followed by different techniques for data preprocessing to prepare them, and finally, the analysis of data and anomaly detection.
  you can see the workflow here:
- <p align="center"><img src="docs/img/workflow.PNG" width="250"><br>Workflow of the proposed model</p>
+ <p align="center"><img src="docs/img/workflow.PNG" width="700"><br>Workflow of the proposed model</p>
 
 
 ## Dataset
