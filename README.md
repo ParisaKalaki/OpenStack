@@ -47,5 +47,6 @@ In this step, we discussed how to use PCA, RPCA, ALM, and the data projection on
 We train the model and a threshold was determined to detect anomaly.
 
 ** how to use? **
+
 If you have a raw log, first use log parser to make structured data. Run IPLOM_demo_openstack on your data set.
 After this step, Run RPCA-demo on your example.log_structured.csv which obtained from logparser.
