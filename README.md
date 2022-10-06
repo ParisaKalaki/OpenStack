@@ -8,7 +8,7 @@ To be able to analyze raw OpenStack logs, we need to parse and structure them fi
  the space in which the anomaly occurs. The proposed model includes four main steps that start from raw
  log parsing followed by different techniques for data preprocessing to prepare them, and finally, the analysis of data and anomaly detection.
  you can see the workflow here:
- <p align="center"><img src="./docs/img/workflow.png"><br>Workflow of the proposed model</p>
+ <p align="center"><img src="docs/img/workflow.PNG"><br>Workflow of the proposed model</p>
 
 
 # Dataset
@@ -35,7 +35,7 @@ A number of important and practical features are selected from existing features
  of the virtual machine in OpenStack logs. We categorize all the event templates that have occurred for each ID, and each ID may have a variety of event templates. By the end, a
  matrix showing rows of sessions, and columns of event templates, is created as shown below:
  
-  <p align="center"><img src="./docs/img/instance id.png" width="502"><br>A matrix made up of sessions and event templates</p>
+  <p align="center"><img src="docs/img/instance id.PNG" width="502"><br>A matrix made up of sessions and event templates</p>
   
 3. **Data Analysis:**
 
