@@ -27,7 +27,7 @@ It is not easy to extract useful information from raw logs since they do not hav
  extracted from unstructured logs, and raw logs can be transformed into properly structured logs. IPLOM algorithm with 87% accuracy resulted in the highest accuracy among other
  algorithms implemented on the OpenStack dataset. For this reason, the present study has used IPLOM for log parsing. 
  
- <p align="center"><img src="./docs/img/IPLOM.jpg" width="502"><br>OpenStack Log after implementing IPLOM algorithm</p>
+ <p align="center"><img src="./docs/img/IPLOM.png" width="502"><br>OpenStack Log after implementing IPLOM algorithm</p>
  
  
 2. **Data Preprocessing:**
