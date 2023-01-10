@@ -12,7 +12,7 @@ from collections import OrderedDict
 
 from sklearn.model_selection import train_test_split
 
-def _split_data(x_data, y_data=None, train_ratio=0, split_type='uniform'):
+def _split_data(x_data, y_data=None, train_ratio=0):
       
     x_train, x_test, y_train, y_test = train_test_split(
     x_data, y_data, test_size=0.5, random_state=42 )
