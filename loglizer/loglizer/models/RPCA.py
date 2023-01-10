@@ -125,8 +125,24 @@ class R_pca:
            return precision, recall, f1, accuracy, y_pred
 
     
+    def predict(self, X):
 
-    
+
+        S = np.zeros(X.shape)
+        L = self.L
+        M = self.M
+        # ,full_matrices=True
+        U, s, V = np.linalg.svd(L)
+
+
+        rank = matrix_rank(L)
+#        U2 = U[:, rank:]
+#        self.proj_C = np.dot(U2, U2.T)
+
+#        U[np.absolute(U) < 0.0009] = 0
+        U1  = U[:,:rank]
+        I = np.identity(U1.shape[0], int)
+        self.proj_C = np.dot(U1, U1.T)   
     
     
     
