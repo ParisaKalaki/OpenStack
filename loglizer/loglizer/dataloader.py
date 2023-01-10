@@ -26,7 +26,7 @@ def _split_data(x_data, y_data=None, train_ratio=0, split_type='uniform'):
  
     return (x_train, y_train), (x_test, y_test)
 
-def load_OpenStack(log_file, label_file=None, window='session', train_ratio=0.8, split_type='sequential', save_csv=False, window_size=0):
+def load_OpenStack(log_file, label_file=None, window='session', train_ratio=0.8, split_type='sequential'):
     """ Load OpenStack structured log into train and test data
 
     Arguments
@@ -85,30 +85,8 @@ def load_OpenStack(log_file, label_file=None, window='session', train_ratio=0.8,
             (x_train, y_train), (x_test, y_test) = _split_data(data_df['EventSequence'].values, 
                 data_df['Label'].values, train_ratio, split_type)
         
-            print(y_train.sum(), y_test.sum())
-
-        if save_csv:
-            data_df.to_csv('data_instances.csv', index=False)
-
-        if window_size > 0:
-            x_train, window_y_train, y_train = slice_hdfs(x_train, y_train, window_size)
-            x_test, window_y_test, y_test = slice_hdfs(x_test, y_test, window_size)
-            log = "{} {} windows ({}/{} anomaly), {}/{} normal"
-            print(log.format("Train:", x_train.shape[0], y_train.sum(), y_train.shape[0], (1-y_train).sum(), y_train.shape[0]))
-            print(log.format("Test:", x_test.shape[0], y_test.sum(), y_test.shape[0], (1-y_test).sum(), y_test.shape[0]))
-            return (x_train, window_y_train, y_train), (x_test, window_y_test, y_test)
-
-        if label_file is None:
-            if split_type == 'uniform':
-                split_type = 'sequential'
-                print('Warning: Only split_type=sequential is supported \
-                if label_file=None.'.format(split_type))
-            # Split training and validation set sequentially
-            x_data = data_df['EventSequence'].values
-            (x_train, _), (x_test, _) = _split_data(x_data, train_ratio=train_ratio, split_type=split_type)
-            print('Total: {} instances, train: {} instances, test: {} instances'.format(
-                  x_data.shape[0], x_train.shape[0], x_test.shape[0]))
-            return (x_train, None), (x_test, None)
+            print(y_train.sum(), y_test.sum())       
+        
     else:
         raise NotImplementedError('load_OpenStack() only support csv and npz files!')
 
@@ -127,25 +105,6 @@ def load_OpenStack(log_file, label_file=None, window='session', train_ratio=0.8,
           .format(num_test, num_test_pos, num_test - num_test_pos))
 
     return (x_train, y_train), (x_test, y_test) , data_df
-
-def slice_hdfs(x, y, window_size):
-    results_data = []
-    #print("Slicing {} sessions, with window {}".format(x.shape[0], window_size))
-    for idx, sequence in enumerate(x):
-        seqlen = len(sequence)
-        i = 0
-        while (i + window_size) < seqlen:
-            slice = sequence[i: i + window_size]
-            results_data.append([idx, slice, sequence[i + window_size], y[idx]])
-            i += 1
-        else:
-            slice = sequence[i: i + window_size]
-            slice += ["#Pad"] * (window_size - len(slice))
-            results_data.append([idx, slice, "#Pad", y[idx]])
-    results_df = pd.DataFrame(results_data, columns=["SessionId", "EventSequence", "Label", "SessionLabel"])
-    #print("Slicing done, {} windows generated".format(results_df.shape[0]))
-    return results_df[["SessionId", "EventSequence"]], results_df["Label"], results_df["SessionLabel"]
-
 
 
 
