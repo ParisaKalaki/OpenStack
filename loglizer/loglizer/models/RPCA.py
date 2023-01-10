@@ -4,21 +4,8 @@ import numpy as np
 import pandas as pd
 from ..utils import metrics
 import matplotlib
-import matplotlib.pyplot as plt
 from sklearn import preprocessing
 from numpy.linalg import matrix_rank
-try:
-    from pylab import plt
-except ImportError:
-    print('Unable to import pylab. R_pca.plot_fit() will not work.')
-
-try:
-    # Python 2: 'xrange' is the iterative version
-    range = xrange
-except NameError:
-    # Python 3: 'range' is iterative - no need for 'xrange'
-    pass
-
 
 class R_pca:
 
