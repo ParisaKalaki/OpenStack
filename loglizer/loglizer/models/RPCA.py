@@ -113,51 +113,6 @@ class R_pca:
         return Lk, Sk
         
 
-    def plot_fit1(self, size=(2,3), tol=0.1, axis_on=True):
-
-        n, d = self.D.shape
-
-        if size:
-            nrows, ncols = size
-        else:
-            sq = np.ceil(np.sqrt(n))
-            nrows = int(sq)
-            ncols = int(sq)
-
-        ymin = np.nanmin(self.D)
-        ymax = np.nanmax(self.D)
-        print('ymin: {0}, ymax: {1}'.format(ymin, ymax))
-
-        numplots = np.min([n, nrows * ncols])
-        plt.figure()
-
-        for n in range(numplots):
-            plt.subplot(nrows, ncols, n + 1)
-            plt.ylim((ymin - tol, ymax + tol))
-            plt.plot(self.L[n, :] + self.S[n, :], 'r')
-            plt.plot(self.S[n, :], 'b')
-            if not axis_on:
-                plt.axis('off')
-    
-    def plot_fit(self, tol=0.1, axis_on=True):
-
-        n, d = self.D.shape
-
-        
-
-        ymin = np.nanmin(self.D)
-        ymax = np.nanmax(self.D)
-        print('ymin: {0}, ymax: {1}'.format(ymin, ymax))
-
-    
-        plt.figure()
-
-   
-        plt.ylim((ymin - tol, ymax + tol))
-        plt.plot(self.L[0, :] + self.S[0, :], 'r')
-        plt.plot(self.S[0, :], 'b')
-        if not axis_on:
-            plt.axis('off')
                 
     def evaluate1(self, X, y_true):
            print('====== Evaluation summary ======')
@@ -173,9 +128,7 @@ class R_pca:
            precision, recall, f1, accuracy = metrics(y_pred, y_true)
            print('Precision: {:.3f}, recall: {:.3f}, F1-measure: {:.3f}, Accuracy: {:.5f} \n'.format(precision, recall, f1, accuracy))
            return precision, recall, f1, accuracy, y_pred
-
-                
-                
+            
                 
     def evaluate2(self, X, y_true):
            print('====== Evaluation summary ======')
@@ -185,84 +138,9 @@ class R_pca:
            return precision, recall, f1, accuracy, y_pred
 
     
-    def predict(self, X):
-        
-        
-        S = np.zeros(X.shape)
-        L = self.L
-        M = self.M
-        # ,full_matrices=True
-        U, s, V = np.linalg.svd(L)
-           
-       
-        rank = matrix_rank(L)
-#        U2 = U[:, rank:]
-#        self.proj_C = np.dot(U2, U2.T)
-        
-#        U[np.absolute(U) < 0.0009] = 0
-        U1  = U[:,:rank]
-        I = np.identity(U1.shape[0], int)
-        self.proj_C = np.dot(U1, U1.T)
-        
-#        V2 = V[rank:,:]
-#        I = np.identity(V2.shape[0], int)
-#        self.proj_C =I -  np.dot(V2, V2.T)
-        
-        
 
-        
-       
-#        self.proj_C = I - np.dot(np.dot(U, np.linalg.inv(np.dot(U.T, U))) , U.T)
-        L = np.dot(self.proj_C,X) 
-#        for i in range(X.shape[0]):
- #              L[i,:]  = np.dot(self.proj_C, X[i,:]) 
-        S = X - L
-        y_pred = np.zeros(X.shape[0])
-        
-        w = np.zeros(S.shape[0])
-        for i in range(S.shape[0]):
-            w[i] =  np.std(S[i])
-           
-        for i in range(X.shape[0]):
-           TF = np.dot(S[i],S[i]) >self.threshold
-           if TF.any():
-              y_pred[i] = 1
-        self.y_pred = y_pred 
-            
-        return y_pred
     
     
     
     
-    def calc_TP_FP_rate(self, y_true, y_pred):
     
-    # Convert predictions to series with index matching y_true
-        
-     #   y_pred = pd.Series(y_pred, index=y_true.index)
-        
-        # Instantiate counters
-        TP = 0
-        FP = 0
-        TN = 0
-        FN = 0
-    
-        # Determine whether each prediction is TP, FP, TN, or FN
-        for i in range(y_true.shape[0]): 
-            if y_true[i]==y_pred[i]==1:
-               TP += 1
-            if y_pred[i]==1 and y_true[i]!=y_pred[i]:
-               FP += 1
-            if y_true[i]==y_pred[i]==0:
-               TN += 1
-            if y_pred[i]==0 and y_true[i]!=y_pred[i]:
-               FN += 1
-        
-        tpr = TP / (TP + FN)
-        if (FP + TN == 0):
-            return tpr, 0.0
-        # Calculate true positive rate and false positive rate
-        
-        fpr = FP / (FP + TN)
-
-        return TP,FP,TN,FN
-
