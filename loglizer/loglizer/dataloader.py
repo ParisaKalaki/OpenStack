@@ -1,10 +1,5 @@
 """
-The interface to load log datasets. The datasets currently supported include
-OpenStack and BGL.
-
-Authors:
-    LogPAI Team
-    
+The interface to load OpenStack log datasets. 
 
 """
 
