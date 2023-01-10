@@ -93,9 +93,6 @@ class FeatureExtractor(object):
         for event in empty_events:
             X_df[event] = [0] * len(X_df)
         X = X_df[self.events].values
-        if self.oov:
-            oov_vec = np.sum(X_df[X_df.columns.difference(self.events)].values > 0, axis=1)
-            X = np.hstack([X, oov_vec.reshape(X.shape[0], 1)])
         
         num_instance, num_event = X.shape
         if self.term_weighting == 'tf-idf':
