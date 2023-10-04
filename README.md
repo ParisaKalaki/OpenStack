@@ -32,7 +32,7 @@ It is not easy to extract useful information from raw logs since they do not hav
  
 2. **Data Preprocessing:**
 
-A number of important and practical features are selected from existing features and also new ones are created.  We categorize the logs into windows by identifying the instance id
+A number of important and practical features are selected from existing features and also new ones are created.  We categorize the logs into Windows by identifying the instance id
  of the virtual machine in OpenStack logs. We categorize all the event templates that have occurred for each ID, and each ID may have a variety of event templates. By the end, a
  matrix showing rows of sessions, and columns of event templates, is created as shown below:
  
@@ -44,9 +44,9 @@ In this step, we discussed how to use PCA, RPCA, ALM, and the data projection on
 
 4. **Anomaly Detection:**
 
-We train the model and a threshold was determined to detect anomaly.
+We trained the model and a threshold was determined to detect anomalies.
 
 ## how to use?
 
-If you have a raw log, first use log parser to make structured data. Run IPLOM_demo_openstack on your data set.
-After this step, Run RPCA-demo on your example.log_structured.csv which obtained from logparser.
+If you have a raw log, first use a log parser to make structured data. Run IPLOM_demo_openstack on your data set.
+Then, Run RPCA-demo on your example.log_structured.csv which is obtained from logparser.
